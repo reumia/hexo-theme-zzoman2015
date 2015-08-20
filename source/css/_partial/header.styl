@@ -1,0 +1,71 @@
+.site-header
+  position relative
+  z-index 1
+  padding spacing-unit * 2
+  background-color #333
+  a
+    color #fff
+  .site-title
+    position relative
+    z-index 100
+    margin spacing-unit 0
+    font-size font-size-large
+    line-height 1
+    font-weight lighter
+    text-align center
+    @media mq-pc
+      font-size font-size-extra-large
+  .site-subtitle
+    font-size font-size
+    font-weight normal
+  .site-header-background
+    position absolute
+    z-index 1
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background-position 50% 50%
+    background-size cover
+    background-repeat no-repeat
+    opacity .1
+
+
+.site-search
+  position relative
+  z-index 100
+  margin 0 auto
+  max-width 200px
+  height 0
+  white-space nowrap
+  overflow hidden
+  transition(all 0.2s)
+  &.active
+    height 40px
+  .search-form
+    *
+      overflow hidden
+      -webkit-appearance none
+      outline 0
+    .search-form-input
+      display block
+      padding 5px 10px
+      width 100%
+      background rgba(0,0,0,.1)
+      color #fff
+      font-size font-size-small
+      &:focus
+      &:active
+        border-bottom 1px solid color-brand
+      &::-webkit-input-placeholder
+        color #999
+    .search-form-submit
+      position absolute
+      right 0
+      top 0
+      bottom 0
+  input[type="search"]
+    -webkit-appearance textfield
+  input[type="search"]::-webkit-search-decoration
+  input[type="search"]::-webkit-search-cancel-button
+    -webkit-appearance none

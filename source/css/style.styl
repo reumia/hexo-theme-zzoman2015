@@ -1,0 +1,71 @@
+@import url(http://fonts.googleapis.com/css?family=Open\+Sans:400,300,700)
+@import url(http:////fonts.googleapis.com/css?family=Source\+Code\+Pro)
+@import "_mixin"
+
+global-reset()
+
+site-width = 700px
+spacing-unit = 20px
+gallery-height = 400px
+
+font-sans = "Open Sans", sans-serif
+font-mono = "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
+font-size-unit = 2px
+font-size = 16px
+font-size-small = font-size - font-size-unit
+font-size-large = font-size + font-size-unit
+font-size-extra-large = font-size * 3
+line-height = 1.6
+
+color-brand = tomato
+color-blockquote = #fff8dd
+color-text = #444
+color-text-light = #999
+color-border = #e1e1e1
+
+border-radius-unit = 8px
+
+mq-tablet = "screen and (min-width: 479px)"
+mq-pc = "screen and (min-width: 700px)"
+mq-wide = "screen and (min-width: 1024px)"
+
+
+*
+  box-sizing border-box
+
+h1
+  font-size 1.5em
+h2
+  font-size 1.2em
+ul, ol, dl
+  margin spacing-unit 0
+  padding-left 40px
+a
+  color color-text
+  text-decoration none
+  transition(color, 0.3s, ease)
+  &:hover
+    color color-brand
+input, textarea, keygen, select, button
+  font-family font-sans
+  font-size font-size
+  line-height line-height
+  -webkit-appearance none
+  border 0
+
+.site
+  position relative
+  margin 0
+  padding 0
+  background-color #fff
+  font-family font-sans
+  font-size font-size
+  line-height line-height
+  color color-text
+  -webkit-font-smoothing antialiased
+
+.site-body
+  position relative
+  z-index 10
+
+@import "_partial/*"

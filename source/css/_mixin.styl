@@ -1,0 +1,47 @@
+global-width(width)
+  width 100%
+  max-width width
+  margin 0 auto
+
+inline-block()
+  display inline-block
+  *display inline
+  *zoom 1
+
+box-shadow(value)
+  -webkit-box-shadow value
+  -moz-box-shadow value
+  box-shadow value
+
+clearfix()
+  &:before
+  &:after
+    content ""
+    display table
+  &:after
+    clear: both
+  zoom: 1 if support-for-ie
+
+ellipsis()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+transition(value)
+  -webkit-transition value
+  -moz-transition value
+  -ms-transition value
+  -o-transition value
+  transition value
+
+mask()
+  &:before
+    content ''
+    position absolute
+    z-index 10
+    top 0
+    bottom 0
+    left 0
+    right 0
+    border 2px solid #333
+    opacity .1

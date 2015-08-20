@@ -1,0 +1,155 @@
+.article
+  margin spacing-unit * 2
+  @media mq-pc
+    margin (spacing-unit * 2) 0
+.article-header
+  &
+  a
+    text-decoration none
+    color color-text
+  a:hover
+    color color-brand
+  .article-meta
+    font-size font-size-small
+    &
+    a
+      text-decoration none
+    .article-date
+    .article-category
+      display inline-block
+    .article-category
+      margin-left (spacing-unit / 2)
+      color color-text-light
+      .article-category-link
+        margin 0 5px
+        color color-text
+        text-transform capitalize
+        &:hover
+          color color-brand
+    .article-tag-list
+      float right
+      margin 0
+      padding 0
+      .article-tag-list-item
+        display inline-block
+        margin 0 5px
+        .article-tag-list-link
+          color color-text-light
+          &:before
+            content '#'
+            display inline-block
+          &:hover
+            color color-brand
+  .article-title
+    margin-bottom spacing-unit * 4
+    font-size: 1.7em
+    font-weight normal
+
+.article-body
+  a
+    text-decoration underline
+    word-break break-all
+  p
+    margin spacing-unit 0
+  h1
+  h2
+  h3
+  h4
+    margin spacing-unit * 2 0 spacing-unit
+  hr
+    border-width 1px 0 0 0
+    border-style dashed
+    border-color color-border
+    margin spacing-unit * 2 0
+  blockquote
+    overflow hidden
+    margin 0
+    padding 0 spacing-unit * 1
+    background color-blockquote
+    color rgba(0,0,0,.5)
+    font-style italic
+    footer
+      margin spacing-unit 0
+      strong
+        margin-right 10px
+  .img-wrap
+    display block
+  img
+    display block
+    margin 0 auto
+    max-width 100%
+  .caption
+    display block
+    margin (spacing-unit / 2) 0 spacing-unit
+    font-size font-size-small
+    color lighten(color-text, 20)
+    text-align center
+  // http://webdesignerwall.com/tutorials/css-elastic-videos
+  .video-container
+    position: relative
+    padding-top: (9 / 16 * 100)% // 16:9 ratio
+    height: 0
+    overflow: hidden
+    iframe, object, embed
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      margin-top: 0
+
+.article-nav
+  margin (spacing-unit * 4) 0 (spacing-unit * 2)
+  .article-nav-link-wrap
+    display block
+    margin spacing-unit (spacing-unit * 2)
+    padding spacing-unit
+    border 1px solid color-border
+    text-align center
+    .article-nav-title
+      font-size font-size-small
+      ellipsis()
+  @media mq-tablet
+    border 1px solid color-border
+    clearfix()
+    .article-nav-link-wrap
+      margin 0
+      width 50%
+      border-width 0
+      &.prev
+        float left
+        text-align left
+      &.next
+        float right
+        text-align right
+
+.article-comments
+  margin spacing-unit * 2
+  padding (spacing-unit / 2) spacing-unit
+  border 1px solid color-border
+  background #f9f9f9
+  @media mq-tablet
+    margin (spacing-unit * 2) 0
+
+.article-gallery
+  margin (spacing-unit * -2) (spacing-unit * -2) (spacing-unit * 2)
+  height gallery-height
+  overflow hidden
+  @media mq-tablet
+    margin (spacing-unit * -3) (spacing-unit * -2) (spacing-unit * 2)
+  @media mq-pc
+    margin (spacing-unit * -3) 0 (spacing-unit * 2)
+  @media mq-wide
+    margin (spacing-unit * -3) (spacing-unit * -5) (spacing-unit * 2)
+  .article-gallery-img
+    display block
+    position relative
+    height gallery-height
+    background-repeat no-repeat
+    background-position 50% 50%
+    background-size cover
+    img
+      display block
+      max-width 100%
+    @media mq-tablet
+      mask()

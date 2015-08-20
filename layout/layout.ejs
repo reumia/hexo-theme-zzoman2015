@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <%
+    var title = page.title_kr || page.title;
+    if ( is_archive() ){
+        title = 'Archives';
+        if ( is_month() ){
+            title += ': ' + page.year + '/' + page.month;
+        } else if ( is_year() ){
+            title += ': ' + page.year;
+        }
+    } else if ( is_category() ){
+        title = 'Category: ' + page.category;
+    } else if ( is_tag() ){
+        title = 'Tag: ' + page.tag;
+    }
+    %>
+    <title><% if ( title ){ %><%= title %> | <% } %><%= config.title %></title>
+    <% if ( theme.rss ){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <%- css('css/style') %>
+    <% if ( theme.fancybox ){ %>
+    <link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css" charset="utf-8">
+    <% } %>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="site">
+    <header class="site-header">
+        <h1 class="site-title"><a href="<%- url_for() %>"><%= config.title %></a></h1>
+        <nav class="site-nav">
+            <ul class="nav">
+                <% if ( theme.menu ){ for ( var key in theme.menu ){ %>
+                <li><a href="<%= theme.menu[key] %>"><%= key %></a></li>
+                <% } } %>
+                <% if ( theme.rss ){ %>
+                <li><a href="<%- theme.rss %>" title="RSS Feed">rss</a></li>
+                <% } %>
+                <li><a class="toggle-search" href="#search">search</a></li>
+            </ul>
+        </nav>
+        <div class="site-search" id="search">
+            <%- search_form() %>
+        </div>
+        <% if ( theme.background ) {%>
+            <div class="site-header-background" style="background-image:url(<%= theme.background %>)"></div>
+        <% } %>
+    </header>
+    <div class="site-body">
+        <%- body %>
+    </div>
+    <footer class="site-footer">
+        <div class="global-width">
+            <ul class="site-widget">
+                <% theme.widgets.forEach(function(widget){ %>
+                <li class="widget widget-<%= widget %>">
+                    <%- partial('_widget/' + widget) %>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="site-info">
+            <address>
+                &copy; 2014 <a href="<%= config.url %>"><%= config.title %></a> All Right Reserved. <br/>
+                Powered by <a href="http://hexo.io">Hexo</a>. Theme by <a href="http://zzoman.com">ZZOMAN</a>
+            </address>
+        </div>
+    </footer>
+    <% if (config.disqus_shortname){ %>
+    <script>
+        var disqus_shortname = '<%= config.disqus_shortname %>';
+        <% if (page.permalink){ %>
+        var disqus_url = '<%= page.permalink %>';
+        <% } %>
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <% } %>
+    <script src="/libs/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <% if ( theme.fancybox ) {%>
+    <script src="/libs/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+    <%}%>
+    <script src="/js/site_init.js" type="text/javascript"></script>
+</body>
+</html>

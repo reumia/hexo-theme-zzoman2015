@@ -1,0 +1,41 @@
+.site-nav
+  position relative
+  z-index 100
+  margin spacing-unit 0
+  ul
+    margin 0
+    padding 0
+    list-style none
+    clearfix()
+    text-align center
+    li
+      display inline-block
+      a
+        display block
+        padding 0 (spacing-unit / 2)
+        font-size font-size-small
+        text-transform uppercase
+        color #999
+        &:hover
+          color color-brand
+
+.page-nav
+  position relative
+  padding 0 (spacing-unit / 2)
+  background #333
+  .page-number
+  .extend
+    display inline-block
+    padding spacing-unit (spacing-unit / 2)
+    color #eee
+    &.current
+      color color-brand
+  @media mq-tablet
+    margin spacing-unit 0
+    text-align center
+    background transparent
+    .page-number
+    .extend
+      padding (spacing-unit / 2)
+      color color-text-light
+

@@ -1,0 +1,50 @@
+.site-widget
+  margin 0
+  padding spacing-unit * 2
+  text-align center
+  list-style none
+  @media mq-tablet
+    margin 0 (spacing-unit * -1)
+    padding-left 0
+    padding-right 0
+    clearfix()
+  .widget
+    margin-top spacing-unit * 2
+    padding-top spacing-unit * 2
+    border-top 1px solid color-border
+    text-align left
+    overflow hidden
+    &:first-child
+      margin-top 0
+      padding-top 0
+      border-top-width 0
+    @media mq-tablet
+      float left
+      width 33%
+      margin 0
+      padding 0 spacing-unit spacing-unit
+      border-width 0
+    ul
+      margin 0
+      padding 0
+      list-style-position inside
+      li
+        ellipsis()
+        text-transform capitalize
+        span
+          margin-left 5px
+          color color-text-light
+          font-size font-size-small
+    .category-list
+      .category-list-child
+        padding-left 20px
+        list-style none
+        .category-list-item
+          &:before
+            content '-'
+            margin-right 5px
+  .widget-title
+    margin 0 0 spacing-unit 0
+    font-size font-size-small
+    font-weight normal
+    color color-text-light

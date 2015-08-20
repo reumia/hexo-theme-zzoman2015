@@ -1,0 +1,23 @@
+<% if (index){ %>
+    <script>
+        location.href = '<%= config.url %>/<%= page.posts.data[0].path %>';
+    </script>
+<% } else { %>
+
+    <% var last; %>
+
+    <section class="archives">
+        <% page.posts.each(function(post, i){ %>
+            <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+        <% }) %>
+    </section>
+    <% if ( page.total > 1 ){ %>
+    <nav class="page-nav">
+        <%- paginator({
+            prev_text: 'Newer',
+            next_text: 'Older'
+        }) %>
+    </nav>
+    <% } %>
+
+<% } %>

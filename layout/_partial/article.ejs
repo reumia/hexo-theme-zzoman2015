@@ -1,0 +1,32 @@
+<div class="global-width">
+    <article class="article" data-layout="<%= post.layout %>" data-slug="<%= post.slug %>">
+        <div class="article-content">
+            <%- partial('post/gallery') %>
+            <% if (post.link || post.title){ %>
+            <header class="article-header">
+                <div class="article-meta">
+                    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+                    <%- partial('post/category') %>
+                    <%- partial('post/tag') %>
+                </div>
+                <%- partial('post/title', {class_name: 'article-title'}) %>
+            </header>
+            <% } %>
+            <div class="article-body">
+                <%- post.content %>
+            </div>
+        </div>
+    </article>
+
+    <% if ( nav ){ %>
+    <%- partial('post/nav') %>
+    <% } %>
+
+    <% if (post.comments && config.disqus_shortname){ %>
+    <section id="comments" class="article-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </section>
+    <% } %>
+</div>

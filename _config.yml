@@ -1,0 +1,15 @@
+# Header
+menu:
+  Archives: /archives
+rss: /atom.xml
+background: /photos/2015/02/20141224_whale.jpg
+
+# Library
+fancybox: true
+
+# Widget
+# Widget List : category, tag, archive, recent_posts
+widgets:
+- tag
+- category
+- recent_posts
