@@ -1,3 +1,6 @@
+# Config
+home: false  # True : Set home as latest post, False : Set home as an index
+
 # Header
 menu:
   Archives: /archives
