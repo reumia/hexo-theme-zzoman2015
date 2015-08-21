@@ -5,7 +5,7 @@ home: false  # True : Set home as latest post, False : Set home as an index
 menu:
   Archives: /archives
 rss: /atom.xml
-background: /photos/2015/02/20141224_whale.jpg
+background: http://reumia.github.io/hexo-theme-zzoman2015/images/background-zzoman2015.jpg
 
 # Library
 fancybox: true
