@@ -21,7 +21,7 @@
         display inline-block
     .article-category
       @media mq-tablet
-        margin-left (spacing-unit / 2)
+        margin-left spacing-unit-half
       color color-text-light
       .category-link
         margin 0 5px
@@ -57,11 +57,11 @@
     font-weight normal
 
 .article-body
+  > *
+    margin spacing-unit 0
   a
     text-decoration underline
     word-break break-all
-  p
-    margin spacing-unit 0
   h1
   h2
   h3
@@ -83,6 +83,8 @@
       margin spacing-unit 0
       strong
         margin-right 10px
+  pre
+    margin spacing-unit 0
   .img-wrap
     display block
   img
@@ -91,7 +93,7 @@
     max-width 100%
   .caption
     display block
-    margin (spacing-unit / 2) 0 spacing-unit
+    margin spacing-unit-half 0 spacing-unit
     font-size font-size-small
     color lighten(color-text, 20)
     text-align center
@@ -110,12 +112,18 @@
       margin-top: 0
   ul
     li
-      margin 0 0 10px 0
+      margin 0 0 spacing-unit-half 0
       ul
-        margin 10px 0
+        margin spacing-unit-half 0
 
 .article-nav
   margin (spacing-unit * 4) 0 (spacing-unit * 2)
+  @media mq-tablet
+    margin-left spacing-unit * 2
+    margin-right spacing-unit * 2
+  @media mq-pc
+    margin-left 0
+    margin-right 0
   .article-nav-link-wrap
     display block
     margin spacing-unit (spacing-unit * 2)
@@ -141,11 +149,15 @@
 
 .article-comments
   margin spacing-unit * 2
-  padding (spacing-unit / 2) spacing-unit
+  @media mq-tablet
+    margin-left spacing-unit * 2
+    margin-right spacing-unit * 2
+  @media mq-pc
+    margin-left 0
+    margin-right 0
+  padding spacing-unit-half spacing-unit
   border 1px solid color-border
   background #f9f9f9
-  @media mq-tablet
-    margin (spacing-unit * 2) 0
 
 .article-gallery
   margin (spacing-unit * -2) (spacing-unit * -2) (spacing-unit * 2)
