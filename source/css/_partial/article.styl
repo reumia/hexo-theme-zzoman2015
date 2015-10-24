@@ -16,23 +16,34 @@
       text-decoration none
     .article-date
     .article-category
-      display inline-block
+      display block
+      @media mq-tablet
+        display inline-block
     .article-category
-      margin-left (spacing-unit / 2)
+      @media mq-tablet
+        margin-left (spacing-unit / 2)
       color color-text-light
-      .article-category-link
+      .category-link
         margin 0 5px
-        color color-text
+        color color-text-light
         text-transform capitalize
+        &:first-child
+          margin-left 0
         &:hover
           color color-brand
     .article-tag-list
-      float right
+      @media mq-tablet
+        position absolute
+        top 0
+        right spacing-unit * 2
+      @media mq-pc
+        right 0
       margin 0
       padding 0
       .article-tag-list-item
         display inline-block
-        margin 0 5px
+        & + .article-tag-list-item
+          margin-left 8px
         .article-tag-list-link
           color color-text-light
           &:before
