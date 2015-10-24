@@ -1,10 +1,10 @@
-# ZZOMAN2015 Hexo Theme
+# HEXO-THEME-ZZOMAN2015
 
 Simplest theme for Hexo by ZZOMAN.
 
-`Responsive`, `IE9+`, `Simple`, 
+* Keywords : `Responsive` `IE9+` `Simple` `Korean`
+* Languages : Based on Korean, but any languages would be suitable.
 
----
+## Usage of ZZOMAN2015
 
-* Based on Korean, but any languages will be suitable.
-
+[Examples](https://github.com/reumia/hexo-theme-zzoman2015/wiki/Examples)
