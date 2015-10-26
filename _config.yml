@@ -16,3 +16,6 @@ widgets:
 - tag
 - category
 - recent_posts
+
+# Google Analytics
+ga_id :
