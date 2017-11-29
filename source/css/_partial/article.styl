@@ -73,7 +73,7 @@
     margin (spacing-unit + spacing-unit-half) 0
   blockquote
     overflow hidden
-    margin 0
+    margin spacing-unit 0
     padding 0 spacing-unit * 1
     background color-blockquote
     color rgba(0,0,0,.5)
@@ -114,6 +114,26 @@
       margin 0 0 spacing-unit-half 0
       ul
         margin spacing-unit-half 0
+  table
+    margin: spacing-unit auto
+    padding: 0
+    border-collapse: collapse
+    border-spacing: 0
+    max-width: 100%
+    table-layout: fixed
+    border-right: 1px solid color-border
+    border-bottom: 1px solid color-border
+    thead
+      th
+        background-color: #f3f3f3
+    th
+    td
+      padding: (spacing-unit-half / 2) spacing-unit-half
+      text-align: left
+      border-left: 1px solid color-border
+      border-top: 1px solid color-border
+      font-size: font-size-small
+      
 
 .article-nav
   margin (spacing-unit * 4) 0 (spacing-unit * 2)
